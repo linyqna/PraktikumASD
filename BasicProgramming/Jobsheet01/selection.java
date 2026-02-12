@@ -21,7 +21,7 @@ public class selection {
         System.out.println("================================");
         System.out.println("================================");
 
-        if (assg > 100 || quiz > 100 || midex > 100 || finalex > 100) {
+        if (assg > 100 || quiz > 100 || midex > 100 || finalex > 100 || assg < 0 || quiz < 0 || midex < 0 || finalex < 0) {
             System.out.println("Score doesn't valid. Please enter the correct score.");
         } else {
             double finalsc = (assg * 0.2) + (quiz * 0.2) + (midex * 0.3) + (finalex * 0.3);
