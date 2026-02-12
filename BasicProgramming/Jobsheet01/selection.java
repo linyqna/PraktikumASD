@@ -17,6 +17,7 @@ public class selection {
         int midex = inp.nextInt();
         System.out.print("Input Final Exam Score  : ");
         int finalex = inp.nextInt();
+        inp.close();
 
         System.out.println("================================");
         System.out.println("================================");
