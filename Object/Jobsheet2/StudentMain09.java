@@ -1,4 +1,4 @@
-package BasicProgramming.Jobsheet2;
+package Object.Jobsheet2;
 
 public class StudentMain09 {
     public static void main(String[] args) {

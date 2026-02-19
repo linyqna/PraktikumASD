@@ -1,4 +1,4 @@
-package BasicProgramming.Jobsheet2;
+package Object.Jobsheet2;
 
 public class Student09 {
     String name;
