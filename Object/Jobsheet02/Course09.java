@@ -6,6 +6,15 @@ public class Course09 {
     int sks;
     int numberOfHours;
 
+    public Course09() {}
+
+    public Course09(String nm, String cd, int sks, int hr) {
+        name = nm;
+        courseCode = cd;
+        this.sks = sks;
+        numberOfHours = hr;
+    }
+
     void showInformation() {
         System.out.println("Course Name             : " + name);
         System.out.println("Course Code             : " + courseCode);
@@ -14,12 +23,13 @@ public class Course09 {
     }
 
     void updateSKS(int sksNew) {
-        sksNew = sks;
+        sks = sksNew;
         System.out.println("The Course Credit have been changed.");
     }
 
     void addHours(int hours) {
-        hours += numberOfHours;
+        numberOfHours += hours;
+        System.out.println("Number of Hours: " + numberOfHours);
     }
 
     void reduceHours(int hours) {

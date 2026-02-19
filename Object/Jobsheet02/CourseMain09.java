@@ -13,10 +13,10 @@ public class CourseMain09 {
         course1.reduceHours(1);
         course1.showInformation();
 
-        Course09 course2 = new Course09();
-        course2.name = "Pract. Algortm";
-        course2.courseCode = "56756757";
-        course2.sks = 3;
-        course2.numberOfHours = 3;
+        Course09 course2 = new Course09("Pract. Algortm", "98079087", 3, 3);
+        course2.showInformation();
+        course2.updateSKS(4);
+        course2.addHours(1);
+        course2.showInformation();
     }
 }
