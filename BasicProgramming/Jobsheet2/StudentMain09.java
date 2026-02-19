@@ -1,6 +1,6 @@
 package BasicProgramming.Jobsheet2;
 
-public class StudentMain {
+public class StudentMain09 {
     public static void main(String[] args) {
         Student09 mhs1 = new Student09();
         mhs1.name = "Muhammad Ali Farhan";
