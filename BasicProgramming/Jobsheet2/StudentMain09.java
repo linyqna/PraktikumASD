@@ -10,11 +10,11 @@ public class StudentMain09 {
 
         mhs1.informationDisplay();
         mhs1.changeClass("SI 2K");
-        mhs1.updateGPA(3.60);
+        mhs1.updateGPA(7.60);
         mhs1.informationDisplay();
 
         Student09 mhs2 = new Student09("Annisa Nabila", "2141720160", 3.25, "TI 2L");
-        mhs2.updateGPA(3.30);
+        mhs2.updateGPA(7.30);
         mhs2.informationDisplay();
     }
 }
