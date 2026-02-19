@@ -6,7 +6,7 @@ public class Student09 {
     String grade;
     double gpa;
 
-    void printData() {
+    void informationDisplay() {
         System.out.println("Nama: " + name);
         System.out.println("NIM: " + nim);
         System.out.println("GPA: " + gpa);
