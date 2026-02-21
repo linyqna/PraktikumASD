@@ -16,5 +16,8 @@ public class StudentMain09 {
         Student09 mhs2 = new Student09("Annisa Nabila", "2141720160", 3.25, "TI 2L");
         mhs2.updateGPA(7.30);
         mhs2.informationDisplay();
+
+        Student09 mhsFitriani = new Student09("Fitriani", "254107060102", 4.0, "SIB 1G");
+        mhsFitriani.informationDisplay();
     }
 }
