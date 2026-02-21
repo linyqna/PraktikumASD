@@ -38,7 +38,7 @@ public class Student09 {
 
     String performanceValue() {
         if (gpa >= 3.5) {
-            return "Very good performance";
+            return "Excellent performance";
         } else if (gpa >= 3.0) {
             return "Good Performance";
         } else if (gpa >= 2.0) {
