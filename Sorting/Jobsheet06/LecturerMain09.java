@@ -28,7 +28,6 @@ public class LecturerMain09 {
         System.out.println("__________________________");
         System.out.println("__________________________");
 
-
         lect.sortingDSC();
         System.out.println("Sorting list by age (DSC):  ");
         lect.print();

@@ -54,7 +54,7 @@ public class TopStudent09 {
             Student09 tmp = listSdt[i];
             int j = i;
 
-            while (j > 0 && listSdt[j-1].gpa > tmp.gpa) {
+            while (j > 0 && listSdt[j-1].gpa < tmp.gpa) {
                 listSdt[j] = listSdt[j-1];
                 j--;
             }
