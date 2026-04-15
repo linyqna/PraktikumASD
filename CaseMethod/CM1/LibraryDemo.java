@@ -58,10 +58,12 @@ public class LibraryDemo {
                     break;
 
                 case 4: 
+                    System.out.println("Sorting by Fines (DSC): ");
                     data.showSort();
                     break;
 
                 case 5: 
+                    System.out.println("Search Student by NIM");
                     System.out.print("Enter NIM: ");
                     String nim = inp.nextLine();
 
