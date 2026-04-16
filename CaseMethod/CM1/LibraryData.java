@@ -79,6 +79,19 @@ public class LibraryData {
         }
     }
 
+    public void countExceed() {
+        int count = 0;
+
+        for (int i = 0; i < idx3; i++) {
+            int overdue = loans[i].loanPeriod - loans[i].loanLimit;
+
+            if (overdue > 0) {
+                count++;
+            }
+        }
+        System.out.println("Number of Student Exceed: " + count);
+    }
+
     public void showSort() {
         fineSort();
         display3();

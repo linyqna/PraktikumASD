@@ -9,14 +9,14 @@ public class LibraryDemo {
 
         LibraryData data = new LibraryData(3, 4, 5);
 
-        data.add1(new Student("22001", "Andi", "Informatics Engineering"));
-        data.add1(new Student("22002", "Budi", "Informatics Engineering"));
-        data.add1(new Student("22003", "Image", "Businsess Information Systems"));
+        data.add1(new Student("22001", "Andi", "Informatics Engineering", "12345"));
+        data.add1(new Student("22002", "Budi", "Informatics Engineering", "23456"));
+        data.add1(new Student("22003", "Image", "Businsess Information Systems", "34567"));
 
-        data.add2(new Book("B001", "Algoritm", 2020));
-        data.add2(new Book("B002", "Database", 2019));
-        data.add2(new Book("B003", "Programming", 2021));
-        data.add2(new Book("B004", "Physics", 2024));
+        data.add2(new Book("B001", "Algoritm", 2020, "Gramed"));
+        data.add2(new Book("B002", "Database", 2019, "Oscar"));
+        data.add2(new Book("B003", "Programming", 2021, "Airlangga"));
+        data.add2(new Book("B004", "Physics", 2024, "Cahya"));
 
         data.add3(new Loan(data.students[0], data.books[0], 7));
         data.add3(new Loan(data.students[1], data.books[1], 3));
@@ -60,6 +60,8 @@ public class LibraryDemo {
                 case 4: 
                     System.out.println("Sorting by Fines (DSC): ");
                     data.showSort();
+                    System.out.println(" ");
+                    data.countExceed();
                     break;
 
                 case 5: 

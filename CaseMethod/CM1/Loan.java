@@ -8,6 +8,7 @@ public class Loan {
     int loanLimit;
     int overdue;
     int fine;
+    int count = 0;
 
     public Loan() {}
 
