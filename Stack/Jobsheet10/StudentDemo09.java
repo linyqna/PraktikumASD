@@ -47,6 +47,8 @@ public class StudentDemo09 {
                         int score = inp.nextInt();
                         graded.grading(score);
                         System.out.printf("Assignment grade of %s is %d\n", graded.name, score);
+                        String binary = stack.convertToBinary(score);
+                        System.out.printf("Assignment grade in binary is %s\n", binary);
                     }
                     break;
 

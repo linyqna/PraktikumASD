@@ -74,4 +74,18 @@ public class StudentAssignStack09 {
         }
         System.out.println(" ");
     }
+
+    String convertToBinary(int grade) {
+        ConversionStack09 stack = new ConversionStack09();
+        while (grade != 0) {
+            int mod = grade % 2;
+            stack.masuk(mod);
+            grade = grade / 2;
+        }
+        String binary = " ";
+        while (!stack.isEmpty()) {
+            binary += stack.keluar();
+        }
+        return binary;
+    } 
 }
