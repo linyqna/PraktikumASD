@@ -37,6 +37,14 @@ public class StudentQueue {
         }
     }
 
+    void rear() {
+        if (!isEmpty()) {
+            data[rear].print();
+        } else {
+            System.out.println("Queue is empty!");
+        }
+    }
+
     void print() {
         if (!isEmpty()) {
             int i = front;

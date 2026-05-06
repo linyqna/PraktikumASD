@@ -17,6 +17,7 @@ public class StudentQueueMain {
             System.out.println("3. Display Front");
             System.out.println("4. Display All Data");
             System.out.println("5. Queue Size");
+            System.out.println("6. Display Rear");
             System.out.println("0. Exit");
             System.out.print("Select menu: ");
             menu = inp.nextInt();
@@ -56,6 +57,10 @@ public class StudentQueueMain {
 
                 case 5: 
                     System.out.println("Queue size: " + queue.size);
+                    break;
+
+                case 6: 
+                    queue.rear();
                     break;
 
                 case 0: 
