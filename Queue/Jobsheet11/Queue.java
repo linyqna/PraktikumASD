@@ -97,4 +97,11 @@ public class Queue {
         }
         return dt;
     }
+
+    void exit() {
+        if (isFull()) {
+            System.out.println("Queue is full!");
+            System.exit(0);
+        }
+    }
 }

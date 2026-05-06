@@ -10,6 +10,7 @@ public class QueueMain {
         System.out.println("3. Print");
         System.out.println("4. Peek");
         System.out.println("5. Clear");
+        System.out.println("0. Exit");
         System.out.println("==========================");
     }
 
@@ -48,6 +49,10 @@ public class QueueMain {
             
                 case 5:
                     Q.clear();
+                    break;
+
+                case 0:
+                    Q.exit();
                     break;
             }
         } while (menu ==1 || menu == 2 || menu == 3 || menu == 4 || menu == 5);
