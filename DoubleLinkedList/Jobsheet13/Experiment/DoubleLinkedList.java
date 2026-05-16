@@ -38,6 +38,7 @@ public class DoubleLinkedList {
     void insertAfter(String key, Student data) {
         Node newNode = new Node(data);
         Node tmp = head;
+        boolean found = false;
         while (tmp != null) {
             if (tmp.data.nim.equalsIgnoreCase(key)) {
                 if (tmp == tail) {
@@ -48,11 +49,63 @@ public class DoubleLinkedList {
                     tmp.next.prev = newNode;
                     tmp.next = newNode;
                 }
+                found = true;
+                break;
             }
             tmp = tmp.next;
         }
-        if (tmp == null) {
+        if (!found) {
             System.out.println("Insertion failed. Data (" + key + ") not found!");
+        }
+    }
+
+    void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Double Linked List is currently empty!");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+    }
+
+    void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Double Linked List is currently empty!");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
+    }
+
+    void removeIdx(int idx) {
+        if (isEmpty()) {
+            System.out.println("Double Linked List is currently empty!");
+            return;
+        }
+        if (idx < 0) {
+            System.out.println("Index doesn't valid!");
+        }
+        if (idx == 0) {
+            removeFirst();
+        } else {
+            Node tmp = head;
+            for (int i = 0; i < idx; i++) {
+                tmp = tmp.next;
+                if (tmp == null) {
+                    System.out.println("Index is out of boundaries!");
+                    return;
+                }
+            }
+            if (tmp == tail) {
+                removeLast();
+            } else {
+                tmp.prev.next = tmp.next;
+                tmp.next.prev = tmp.prev;
+            }
         }
     }
 
