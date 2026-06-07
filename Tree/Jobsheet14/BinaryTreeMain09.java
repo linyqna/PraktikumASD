@@ -39,5 +39,10 @@ public class BinaryTreeMain09 {
         bst.delete(3.57);
         System.out.println("Student list after deletion:");
         bst.traverseInOrder(bst.root);
+
+        bst.getMinIPK();
+        bst.getMaxIPK();
+
+        bst.displayStudentsWithIPKAbove(3.50);
     }
 }

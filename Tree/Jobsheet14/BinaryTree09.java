@@ -150,4 +150,69 @@ public class BinaryTree09 {
             successor.left = current.left;
         }
     }
+
+    public void addRekursif(Student09 data) {
+        if (isEmpty()) {
+            root = new Node09(data);
+        } else {
+            addRekursifHelper(root, data);
+        }
+    }
+
+    private void addRekursifHelper(Node09 current, Student09 data) {
+        if (data.gpa < current.data.gpa) {
+            if (current.left == null) {
+                current.left = new Node09(data);
+            } else {
+                addRekursifHelper(current.left, data);
+            }
+        } else if (data.gpa > current.data.gpa) {
+            if (current.right == null) {
+                current.right = new Node09(data);
+            } else {
+                addRekursifHelper(current.right, data);
+            }
+        }
+    }
+
+    public void getMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+            return;
+        }
+        Node09 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.print("Lowest IPK Student: ");
+        current.data.print();
+    }
+
+    public void getMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+            return;
+        }
+        Node09 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.print("Highest IPK Student: ");
+        current.data.print();
+    }
+
+    public void displayStudentsWithIPKAbove(double threshold) {
+        System.out.println("Students with IPK above " + threshold + ":");
+        displayStudentsWithIPKAboveHelper(root, threshold);
+    }
+
+    private void displayStudentsWithIPKAboveHelper(Node09 node, double threshold) {
+        if (node != null) {
+            displayStudentsWithIPKAboveHelper(node.left, threshold);
+            if (node.data.gpa > threshold) {
+                node.data.print();
+            }
+            displayStudentsWithIPKAboveHelper(node.right, threshold);
+        }
+    }
 }
