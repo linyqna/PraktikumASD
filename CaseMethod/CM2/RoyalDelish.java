@@ -16,14 +16,15 @@ public class RoyalDelish {
     public static class Order {
         int orderCode;
         String orderName;
-        int price;
+        int price, amount;
 
         public Order() {}
 
-        public Order(int orderCode, String orderName, int price) {
+        public Order(int orderCode, String orderName, int price, int amount) {
             this.orderCode = orderCode;
             this.orderName = orderName;
             this.price = price;
+            this.amount = amount;
         }
     }
 }

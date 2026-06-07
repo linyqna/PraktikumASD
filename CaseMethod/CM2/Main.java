@@ -48,18 +48,40 @@ public class Main {
                     String order = inp.nextLine();
                     System.out.print("Price: ");
                     int price = inp.nextInt();
+                    System.out.print("Amount: ");
+                    int amount = inp.nextInt();
 
-                    RoyalDelish.Order newOrder = new RoyalDelish.Order(code, order, price);
+                    int total = price * amount;
+                    System.out.println("Total: " + total);
+
+                    RoyalDelish.Order newOrder = new RoyalDelish.Order(code, order, price, amount);
                     dll.addLast2(newOrder);
+                    
+                    System.out.println("Successfully add to order queue.");
 
-                    String nama = dll.head1.customer.name;
-                    String beli = dll.tail2.data.orderName;
-                    System.out.println(nama + " has been ordered " + beli + ".");
-                    dll.removeFirst1();
+                    System.out.println("\nHow do you want deleted the queue?");
+                    System.out.println("1. Standard Process (First)");
+                    System.out.println("2. Specific Index");    
+                    System.out.print("Your choice: ");
+                    int removefrom = inp.nextInt();
+                    inp.nextLine();
+
+                    if (removefrom == 1) {
+                        dll.removeFirst1();
+                        System.out.println("successfully remove!");
+                    } else if (removefrom == 2) {
+                        System.out.print("Enter the Index you want to remove: ");
+                        int delIdx = inp.nextInt();
+                        dll.removeIdx(delIdx);
+                        System.out.println("Succesfully remove!");
+                    }else {
+                        System.out.println("Invalid choice.");
+                    }
                     break;
 
                 case 4:
                     dll.print2();
+                    dll.count();
                     break;
 
                 case 0:
@@ -71,5 +93,6 @@ public class Main {
                     break;
             }
         } while (menu != 0);
+        inp.close();
     }
 }

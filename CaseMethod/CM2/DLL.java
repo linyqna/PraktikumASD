@@ -1,5 +1,7 @@
 package CaseMethod.CM2;
 
+import CaseMethod.CM2.Node.NodeBuyer;
+
 public class DLL {
     Node.NodeBuyer head1, tail1;
     Node.NodeOrder head2, tail2;
@@ -90,9 +92,9 @@ public class DLL {
         sortingOrder();
         if (!isEmpty2()) {
             Node.NodeOrder tmp = head2;
-            System.out.printf("%-10s %-10s %-10s%n", "Order Code", "Order Name", "Price");
+            System.out.printf("%-10s %-10s %-10s %-10s%n", "Order Code", "Order Name", "Price", "Amount");
             while (tmp != null) {
-                System.out.printf("%-10d %-10s %-10d%n", tmp.data.orderCode, tmp.data.orderName, tmp.data.price);
+                System.out.printf("%-10d %-10s %-10d %-10d%n", tmp.data.orderCode, tmp.data.orderName, tmp.data.price, tmp.data.amount);
                 tmp = tmp.next2;
             }
             System.out.println(" ");
@@ -101,5 +103,56 @@ public class DLL {
         }
     }
 
-    
+    void count() {
+        if (isEmpty1()) {
+            System.out.println("Antrean is still empty!");
+        } else if (head2 == tail2) {
+            Node.NodeOrder tmp = head2;
+            System.out.println("The total price of all order is " + tmp.data.price);
+        } else {
+            Node.NodeOrder tmp = head2;
+            int count = 0;
+            count = count + tmp.data.price;
+            System.out.println("The total price of all order is " + count);
+        }
+    }
+
+    void removeLast() {
+        if (isEmpty1()) {
+            System.out.println("Double Linked List is currently empty!");
+        } else if (head1 == tail1) {
+            head1 = tail1 = null;
+        } else {
+            tail1 = tail1.prev1;
+            tail1.next1 = null;
+        }
+    }
+
+    void removeIdx(int idx) {
+        if (isEmpty1()) {
+            System.out.println("Double Linked List is currently empty!");
+            return;
+        }
+        if (idx < 0) {
+            System.out.println("Index doesn't valid!");
+        }
+        if (idx == 0) {
+            removeFirst1();
+        } else {
+            NodeBuyer tmp = head1;
+            for (int i = 0; i < idx; i++) {
+                tmp = tmp.next1;
+                if (tmp == null) {
+                    System.out.println("Index is out of boundaries!");
+                    return;
+                }
+            }
+            if (tmp == tail1) {
+                removeLast();
+            } else {
+                tmp.prev1.next1 = tmp.next1;
+                tmp.next1.prev1 = tmp.prev1;
+            }
+        }
+    }
 }
